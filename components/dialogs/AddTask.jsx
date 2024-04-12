@@ -9,7 +9,7 @@ import {
 import {AddTaskFrom} from '../forms/AddTaskForm'
 import {cn} from '@/lib/utils/mergeCss'
 
-function AddTask({children, className}) {
+function AddTask({children, className, uid, payload}) {
 	return (
 		<Dialog className="">
 			<DialogTrigger className="bg-black text-white w-full py-2.5 rounded-lg mt-3 font-semibold">

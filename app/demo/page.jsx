@@ -10,7 +10,7 @@ async function DemoPage({children}) {
 	// JSON array methods map filter sort... [{},{},{}]
 	// Vendor   API/SDK to get the data and parse the data.
 	const payload = await getToDoItems()
-	const tasks = Object.entries(payload.todos)
+	const tasks = Object.entries(payload.todos).reverse()
 
 	return (
 		<>
@@ -21,9 +21,7 @@ async function DemoPage({children}) {
 			<ToDoList className="space-y-4 p-4 h-[478px] max-h-[478px] overflow-y-scroll shadow-sm rounded-md border border-neutral-200">
                     {tasks.map((task) => (
                         <ToDoListItem
-                            key={task[0]}
-                            category={task[1].category}
-                            todo={task[1].todo}
+                            key={task[0]} payload={task[1]} uid={task[0]} 
                         />
                     ))}
                 </ToDoList>
